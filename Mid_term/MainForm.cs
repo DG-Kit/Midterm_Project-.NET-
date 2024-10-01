@@ -17,6 +17,9 @@ namespace Mid_term
         {
             InitializeComponent();
             dbconn = new DatabaseConnection();
+            // Disable the window control buttons
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
         }
 
         private void buttonManageEmployees_Click(object sender, EventArgs e)

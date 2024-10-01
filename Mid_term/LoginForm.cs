@@ -17,6 +17,21 @@ namespace Mid_term
         {
             InitializeComponent();
             dbconn = new DatabaseConnection();
+            // Disable the window control buttons
+            this.ActiveControl = null;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+
+            // Hover Mouse Button Register
+            labelRegister.MouseEnter += new EventHandler(labelRegister_MouseEnter);
+            labelRegister.MouseLeave += new EventHandler(labelRegister_MouseLeave);
+
+            labelReturnLogin.MouseEnter += new EventHandler(labelReturnLogin_MouseEnter);
+            labelReturnLogin.MouseLeave += new EventHandler(labelReturnLogin_MouseLeave);
+
+            //Enter button
+            this.AcceptButton = buttonLogin; // Step 1
+            textBoxPassword.KeyPress += new KeyPressEventHandler(textBoxPassword_KeyPress); // Step 4
         }
 
         private void buttonLogin_Click(object sender, EventArgs e)
@@ -61,7 +76,7 @@ namespace Mid_term
             }
         }
 
-        private void buttonRegister_Click(object sender, EventArgs e)
+        private void buttonRegister_Click_1(object sender, EventArgs e)
         {
             string name = textBoxRegisterName.Text.Trim();
             string email = textBoxRegisterEmail.Text.Trim();
@@ -129,17 +144,12 @@ namespace Mid_term
 
                 // Optionally, hide the registration panel after registration
                 panelRegister.Visible = false;
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show("An error occurred during registration: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void buttonShowRegister_Click(object sender, EventArgs e)
-        {
-            // Hiển thị panel hoặc ẩn panel
-            panelRegister.Visible = !panelRegister.Visible;
         }
 
         private void buttonTogglePassword_Click(object sender, EventArgs e)
@@ -148,13 +158,13 @@ namespace Mid_term
             {
                 // Show password
                 textBoxRegisterPassword.PasswordChar = '\0'; // '\0' means no masking
-                buttonTogglePassword.Text = "Hide"; // Change button text to "Hide Password"
+                buttonTogglePassword.Image = Properties.Resources.icons8_hide_password_24;
             }
             else
             {
                 // Hide password
                 textBoxRegisterPassword.PasswordChar = '*'; // Mask the password
-                buttonTogglePassword.Text = "Show"; // Change button text to "Show Password"
+                buttonTogglePassword.Image = Properties.Resources.icons8_show_password_24;
             }
         }
 
@@ -164,13 +174,54 @@ namespace Mid_term
             {
                 // Show password
                 textBoxPassword.PasswordChar = '\0'; // '\0' means no masking
-                buttonTogglePassword_1.Text = "Hide"; // Change button text to "Hide Password"
+                buttonTogglePassword_1.Image = Properties.Resources.icons8_hide_password_24; // Change button text to "Hide Password"
             }
             else
             {
                 // Hide password
                 textBoxPassword.PasswordChar = '*'; // Mask the password
-                buttonTogglePassword_1.Text = "Show"; // Change button text to "Show Password"
+                buttonTogglePassword_1.Image = Properties.Resources.icons8_show_password_24; // Change button text to "Show Password"
+            }
+        }
+
+        private void labelRegister_Click(object sender, EventArgs e)
+        {
+            // Hiển thị panel hoặc ẩn panel
+            panelRegister.Visible = !panelRegister.Visible;
+        }
+
+        private void labelReturnLogin_Click(object sender, EventArgs e)
+        {
+            // Hide the register panel and show the login form
+            panelRegister.Visible = false;     
+        }
+
+        // Hover Mouse Button Register
+        private void labelRegister_MouseEnter(object sender, EventArgs e)
+        {
+            labelRegister.Font = new Font(labelRegister.Font, FontStyle.Underline | FontStyle.Bold);
+        }
+
+        private void labelRegister_MouseLeave(object sender, EventArgs e)
+        {
+            labelRegister.Font = new Font(labelRegister.Font, FontStyle.Bold);
+        }
+
+        private void labelReturnLogin_MouseEnter(object sender, EventArgs e)
+        {
+            labelReturnLogin.Font = new Font(labelReturnLogin.Font, FontStyle.Underline | FontStyle.Bold);
+        }
+
+        private void labelReturnLogin_MouseLeave(object sender, EventArgs e)
+        {
+            labelReturnLogin.Font = new Font(labelReturnLogin.Font, FontStyle.Bold);
+        }
+
+        private void textBoxPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                buttonLogin.PerformClick(); // Trigger the login button click event
             }
         }
     }

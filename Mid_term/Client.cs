@@ -18,6 +18,9 @@ namespace Mid_term
             InitializeComponent();
             dbconn = new DatabaseConnection();
             LoadClientData();
+            // Disable the window control buttons
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
         }
 
         // Load all clients into the DataGridView

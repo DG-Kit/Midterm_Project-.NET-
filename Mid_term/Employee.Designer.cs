@@ -55,7 +55,7 @@
             this.dataGridViewEmployees.Location = new System.Drawing.Point(9, 10);
             this.dataGridViewEmployees.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewEmployees.Name = "dataGridViewEmployees";
-            this.dataGridViewEmployees.Size = new System.Drawing.Size(570, 244);
+            this.dataGridViewEmployees.Size = new System.Drawing.Size(580, 244);
             this.dataGridViewEmployees.TabIndex = 0;
             this.dataGridViewEmployees.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewEmployees_CellClick);
             // 
@@ -101,7 +101,7 @@
             this.textBoxSalary.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxSalary.Multiline = true;
             this.textBoxSalary.Name = "textBoxSalary";
-            this.textBoxSalary.Size = new System.Drawing.Size(115, 27);
+            this.textBoxSalary.Size = new System.Drawing.Size(125, 27);
             this.textBoxSalary.TabIndex = 10;
             // 
             // dateTimePickerHireDate
@@ -190,7 +190,7 @@
             this.label5.Location = new System.Drawing.Point(461, 265);
             this.label5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(118, 16);
+            this.label5.Size = new System.Drawing.Size(127, 16);
             this.label5.TabIndex = 18;
             this.label5.Text = "Salary";
             this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -240,7 +240,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Employee";
-            this.Text = "Salary";
+            this.Text = "Employee";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmployees)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

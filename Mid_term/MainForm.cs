@@ -33,6 +33,7 @@ namespace Mid_term
             // Close the MainForm
             this.Close();
 
+
             // Show the LoginForm again
             LoginForm loginForm = new LoginForm();
             loginForm.Show();

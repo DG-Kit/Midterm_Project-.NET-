@@ -161,5 +161,22 @@ namespace Mid_term
                 dateTimePickerHireDate.Value = Convert.ToDateTime(row.Cells["HireDate"].Value);
             }
         }
+
+        private void buttonClear_Click(object sender, EventArgs e)
+        {
+            // Clear all the TextBox fields
+            textBoxName.Clear();
+            textBoxEmail.Clear();
+            textBoxPhone.Clear();
+            textBoxAddress.Clear();
+            textBoxSalary.Clear();
+            textBoxPassword.Clear();
+
+            // Reset the DateTimePicker to the current date
+            dateTimePickerHireDate.Value = DateTime.Now;
+
+            // Optionally, clear the selection in DataGridView if required
+            dataGridViewEmployees.ClearSelection();
+        }
     }
 }

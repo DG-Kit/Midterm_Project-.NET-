@@ -44,5 +44,28 @@ namespace Mid_term
             Client clientManagementForm = new Client();
             clientManagementForm.ShowDialog();
         }
+
+        private void buttonManageProducts_Click(object sender, EventArgs e)
+        {
+            Products productsManagementForm = new Products();
+            productsManagementForm.ShowDialog();
+        }
+
+        private void buttonPlaceOrders_Click(object sender, EventArgs e)
+        {
+            PlaceOrder placeOrderForm = new PlaceOrder();
+            placeOrderForm.ShowDialog();
+        }
+
+        private void buttonManageOrders_Click(object sender, EventArgs e)
+        {
+            Order order = new Order();
+            order.ShowDialog();
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

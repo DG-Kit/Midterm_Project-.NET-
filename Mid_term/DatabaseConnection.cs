@@ -13,7 +13,7 @@ namespace Mid_term
         private string connectionString = "initial catalog = Midterm_DotNet; data source = DESKTOP-D21A1I4\\SQLEXPRESS; integrated security = true";
 
         // Method to get a connection
-        private SqlConnection GetConnection()
+        public SqlConnection GetConnection()
         {
             return new SqlConnection(connectionString);
         }
@@ -40,7 +40,5 @@ namespace Mid_term
                 command.ExecuteNonQuery();
             }
         }
-
-
     }
 }

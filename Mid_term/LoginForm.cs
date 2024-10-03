@@ -60,6 +60,10 @@ namespace Mid_term
 
                 if (dataTable.Rows.Count > 0)
                 {
+                    // Set the current user information
+                    CurrentUser.EmployeeId = (int)dataTable.Rows[0]["ID"];
+                    CurrentUser.Username = username;
+
                     // Login successful, open the main form
                     MainForm mainForm = new MainForm();
                     mainForm.Show();
